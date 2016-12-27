@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<dubbo:application name="liuzw-dubbo-server" />
+
+	<dubbo:registry address="${dubbo.registry.address}" />
+
+	<!-- <dubbo:protocol name="dubbo" port="${dubbo.protocol.port}"  /> -->
+		
+	<dubbo:service interface="com.tiantian.item.apis.ContentCategoryService" ref="contentCategoryService" />
+	<dubbo:service interface="com.tiantian.item.apis.ContentService" ref="contentService" />
+	<dubbo:service interface="com.tiantian.item.apis.ItemCatService" ref="itemCatService" />
+	<dubbo:service interface="com.tiantian.item.apis.ItemDescService" ref="itemDescService" />
+	<dubbo:service interface="com.tiantian.item.apis.ItemParamItemService" ref="itemParamItemService" />
+	<dubbo:service interface="com.tiantian.item.apis.ItemParamService" ref="itemParamService" />
+	<dubbo:service interface="com.tiantian.item.apis.ItemService" ref="itemService" />
+
+</beans>

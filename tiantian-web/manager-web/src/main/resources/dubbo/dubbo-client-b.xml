@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://code.alibabatech.com/schema/dubbo
+           http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<dubbo:application name="liuzw-dubbo-client"
+		owner="${dubbo.application.owner}" />
+
+	<dubbo:registry address="${dubbo.registry.address}" />
+	
+	<!-- <dubbo:annotation /> -->
+	
+	<dubbo:protocol name="dubbo" port="${dubbo.protocol.port}"
+		threads="200" />
+
+	<dubbo:monitor protocol="registry" address="${dubbo.monitor.address}" 
+		/>
+
+	<dubbo:consumer check="false" timeout="20000"
+		loadbalance="roundrobin" retries="2" validation="true"
+		group="${dubbo.consumer.group}" version="${dubbo.consumer.version}" />
+
+
+	<dubbo:reference id="testService" interface="cn.liuzw.study.test.apis.TestService" />
+
+
+</beans>
