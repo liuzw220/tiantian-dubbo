@@ -17,43 +17,27 @@
 			<artifactId>tiantian-common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		<!-- 映入接口工程 -->
+		<!-- 引入接口工程 -->
 		<dependency>
 			<groupId>com.tiantian</groupId>
 			<artifactId>item-apis</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		<!-- 日志相关 -->
+		<!-- 引入framework-core工程 -->
 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
+			<groupId>com.tiantian</groupId>
+			<artifactId>framework-core</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<!-- spring相关 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-		</dependency>
-		<!-- spring aspj -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-aspects</artifactId>
-		</dependency>
-		<!-- spring jdbc -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-jdbc</artifactId>
+			<artifactId>spring-context</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib</artifactId>
-			<version>3.1</version>
 		</dependency>
-		<dependency>
-			<groupId>org.mybatis</groupId>
-			<artifactId>mybatis</artifactId>
-		</dependency>
-
-
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis-spring</artifactId>
@@ -62,7 +46,6 @@
 			<groupId>com.github.miemiedev</groupId>
 			<artifactId>mybatis-paginator</artifactId>
 		</dependency>
-
 
 		<!-- MySql -->
 		<dependency>
@@ -77,13 +60,6 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid</artifactId>
-		</dependency>
-
-		<!-- 通用mapper -->
-		<dependency>
-			<groupId>com.github.abel533</groupId>
-			<artifactId>mapper</artifactId>
-			<version>2.2.0</version>
 		</dependency>
 		<!-- 分页助手 -->
 		<dependency>
