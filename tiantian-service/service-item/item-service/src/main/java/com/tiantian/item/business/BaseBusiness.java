@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.tiantian.item.beas.mapper.TiantianMapper;
+import com.tiantian.core.mapper.plugin.TianTianMapper;
 import com.tiantian.item.pojo.BasePojo;
 
 /**
@@ -21,7 +21,7 @@ import com.tiantian.item.pojo.BasePojo;
 public abstract class BaseBusiness<T extends BasePojo> {
 
     @Autowired
-    private TiantianMapper<T> mapper;
+    private TianTianMapper<T> mapper;
     //注入rabbitMq模板
     @Autowired(required=false)
     private RabbitTemplate rabbitTemplate;

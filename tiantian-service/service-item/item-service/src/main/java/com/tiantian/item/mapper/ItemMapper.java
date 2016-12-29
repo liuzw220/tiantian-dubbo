@@ -1,9 +1,9 @@
 package com.tiantian.item.mapper;
 
 
-import com.tiantian.item.beas.mapper.TiantianMapper;
+import com.tiantian.core.mapper.plugin.TianTianMapper;
 import com.tiantian.item.pojo.Item;
 
-public interface ItemMapper extends TiantianMapper<Item>  {
+public interface ItemMapper extends TianTianMapper<Item>  {
 
 }
