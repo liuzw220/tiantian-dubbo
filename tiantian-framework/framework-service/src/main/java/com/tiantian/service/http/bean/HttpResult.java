@@ -1,4 +1,4 @@
-package com.tiantian.common.bean;
+package com.tiantian.service.http.bean;
 
 public class HttpResult {
     

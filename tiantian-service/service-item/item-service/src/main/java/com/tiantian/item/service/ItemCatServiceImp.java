@@ -6,8 +6,8 @@ import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tiantian.common.bean.ItemCatResult;
 import com.tiantian.item.apis.ItemCatService;
+import com.tiantian.item.beans.ItemCatResult;
 import com.tiantian.item.business.ItemCatBusiness;
 import com.tiantian.item.pojo.ItemCat;
 import com.tiantian.item.vo.ItemCatVo;
@@ -34,7 +34,7 @@ public class ItemCatServiceImp implements ItemCatService {
 
 	@Override
 	public ItemCatVo queryById(long id) {
-		ItemCat itemCat=itemCatBusiness.queryById(id);
+		ItemCat itemCat=itemCatBusiness.findById(id);
 		return dozerMapper.map(itemCat, ItemCatVo.class);
 	}
 

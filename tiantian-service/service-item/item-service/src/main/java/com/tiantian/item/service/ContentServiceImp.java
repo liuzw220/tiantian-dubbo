@@ -2,7 +2,7 @@ package com.tiantian.item.service;
 
 import org.springframework.stereotype.Service;
 
-import com.github.pagehelper.PageInfo;
+import com.tiantian.core.beans.PageResult;
 import com.tiantian.item.apis.ContentService;
 import com.tiantian.item.bo.ContentBo;
 import com.tiantian.item.vo.ContentVo;
@@ -14,14 +14,11 @@ public class ContentServiceImp implements ContentService {
 
 	@Override
 	public void deleteByIds(Long[] ids) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public PageInfo<ContentVo> queryListPage(ContentBo content, Integer page,
-			Integer rows) {
-		// TODO Auto-generated method stub
+	public PageResult<ContentVo> queryListPage(ContentBo content) {
 		return null;
 	}
 

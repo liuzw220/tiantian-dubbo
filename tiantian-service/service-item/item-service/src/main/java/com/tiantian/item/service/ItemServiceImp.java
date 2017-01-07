@@ -8,14 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.github.pagehelper.PageInfo;
-import com.tiantian.common.bean.EasyUIResult;
+import com.tiantian.core.beans.PageResult;
 import com.tiantian.item.apis.ItemService;
+import com.tiantian.item.bo.BaseBo;
 import com.tiantian.item.bo.ItemBo;
 import com.tiantian.item.business.ItemBusiness;
 import com.tiantian.item.pojo.Item;
 import com.tiantian.item.vo.ItemVo;
 
-
+@SuppressWarnings("unchecked")
 @Service("itemService")
 public class ItemServiceImp implements ItemService {
 
@@ -25,10 +26,10 @@ public class ItemServiceImp implements ItemService {
 	private Mapper dozerMapper;
 	
 	@Override
-	public EasyUIResult queryListPage(Integer pageIndex, Integer pageSize) {
-		PageInfo<Item> items=itemBusiness.queryAllPage(pageIndex, pageSize);
-		List<Item> is= items.getList();
-		EasyUIResult result=new EasyUIResult(items.getTotal(),pojoToVo(is));
+	public PageResult<ItemVo> queryListPage(BaseBo bo) {
+		PageInfo<Item> items=itemBusiness.queryListPage(bo);
+		PageResult<ItemVo> result=dozerMapper.map(items, PageResult.class);
+		result.setRows(pojoToVo(items.getList()));
 		return result;
 	}
 
@@ -49,7 +50,7 @@ public class ItemServiceImp implements ItemService {
 
 	@Override
 	public ItemVo queryById(Long itemId) {
-		Item item=itemBusiness.queryById(itemId);
+		Item item=itemBusiness.findById(itemId);
 		ItemVo vo=dozerMapper.map(item, ItemVo.class);
 		return vo;
 	}
@@ -58,14 +59,13 @@ public class ItemServiceImp implements ItemService {
 	public void deleteByIds(Long[] ids) {
 		 itemBusiness.deleteByIds(ids);
 	}
-
-	
 	/**
 	 * pojo转vo对象
 	 * @param contentCategorys
 	 * @return
 	 */
 	private List<ItemVo>  pojoToVo(List<Item>  items){
+		if(items==null) return null;
 		List<ItemVo> list=new ArrayList<ItemVo>();
 		for(Item item:items){
 			ItemVo vo=dozerMapper.map(item, ItemVo.class);

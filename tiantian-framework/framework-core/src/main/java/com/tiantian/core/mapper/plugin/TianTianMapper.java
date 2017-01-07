@@ -33,7 +33,7 @@ public interface TianTianMapper<T> {
      * @return
      */
     @SelectProvider(type = TianTianMapperProvider.class, method = "dynamicSQL")
-    int selectCount(T record);
+    Long selectCount(T record);
 
     /**
      * 根据主键进行查询,必须保证结果唯一 单个字段做主键时,可以直接写主键的值 联合主键时,key可以是实体类,也可以是Map

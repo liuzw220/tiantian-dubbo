@@ -1,4 +1,4 @@
-package com.tiantian.common.bean;
+package com.tiantian.item.beans;
 
 import java.util.List;
 

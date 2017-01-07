@@ -10,18 +10,8 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.tiantian</groupId>
-			<artifactId>tiantian-common</artifactId>
+			<artifactId>framework-core</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<!-- 分页助手 -->
-		<dependency>
-			<groupId>com.github.pagehelper</groupId>
-			<artifactId>pagehelper</artifactId>
-		</dependency>
-		<!-- 分页助手依赖 -->
-		<dependency>
-			<groupId>com.github.jsqlparser</groupId>
-			<artifactId>jsqlparser</artifactId>
 		</dependency>
 	</dependencies>
 </project>

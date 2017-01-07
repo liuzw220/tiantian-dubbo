@@ -8,11 +8,11 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tiantain.common.service.RedisService;
-import com.tiantian.common.bean.ItemCatData;
-import com.tiantian.common.bean.ItemCatResult;
-import com.tiantian.common.utils.JsonEntityUtils;
+import com.tiantian.core.utils.JsonEntityUtils;
+import com.tiantian.item.beans.ItemCatData;
+import com.tiantian.item.beans.ItemCatResult;
 import com.tiantian.item.pojo.ItemCat;
+import com.tiantian.service.redis.RedisService;
 
 @Service
 public class ItemCatBusiness extends BaseBusiness<ItemCat> {
@@ -50,7 +50,7 @@ public class ItemCatBusiness extends BaseBusiness<ItemCat> {
         }
         ItemCatResult result = new ItemCatResult();
         // 全部查出，并且在内存中生成树形结构
-        List<ItemCat> cats = super.queryAll();
+        List<ItemCat> cats = super.queryList(null);
 
         // 转为map存储，key为父节点ID，value为数据集合
         Map<Long, List<ItemCat>> itemCatMap = new HashMap<Long, List<ItemCat>>();

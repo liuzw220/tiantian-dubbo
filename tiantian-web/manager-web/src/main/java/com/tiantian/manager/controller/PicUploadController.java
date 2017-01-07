@@ -23,10 +23,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-/*import com.taotao.store.manage.controller.result.PicUploadResult;
-import com.taotao.store.manage.service.PropertieService;*/
-import com.tiantian.common.bean.PicUploadResult;
 import com.tiantian.item.apis.PropertieService;
+import com.tiantian.item.beans.PicUploadResult;
 
 /**
  * 图片上传

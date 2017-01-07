@@ -9,8 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.github.pagehelper.PageInfo;
-import com.tiantian.common.bean.EasyUIResult;
+import com.tiantian.core.beans.PageResult;
 import com.tiantian.item.apis.ItemParamService;
 import com.tiantian.item.bo.ItemParamBo;
 import com.tiantian.item.vo.ItemParamVo;
@@ -29,11 +28,11 @@ public class ItemParamController {
      * @return
      */
     @RequestMapping(method=RequestMethod.GET)
-    public ResponseEntity<EasyUIResult> queryItemParamAll(@RequestParam("page")Integer page,
+    public ResponseEntity<PageResult<ItemParamVo>> queryItemParamAll(@RequestParam("page")Integer page,
             @RequestParam("rows") Integer rows){
         try {
-            PageInfo<ItemParamVo> pageInfo = itemParamService.queryAllPage(page, rows);
-            EasyUIResult resUiResult=new EasyUIResult(pageInfo.getTotal(),pageInfo.getList());
+        	PageResult<ItemParamVo> pageInfo = itemParamService.queryAllPage(null);
+        	PageResult<ItemParamVo> resUiResult=new PageResult<ItemParamVo>(pageInfo.getTotal(),pageInfo.getRows());
             //200
             return  ResponseEntity.ok(resUiResult);
         } catch (Exception e) {

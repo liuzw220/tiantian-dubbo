@@ -1,11 +1,11 @@
 package com.tiantian.item.apis;
 
-import com.github.pagehelper.PageInfo;
+import com.tiantian.core.beans.PageResult;
 import com.tiantian.item.bo.ContentBo;
 import com.tiantian.item.vo.ContentVo;
 
 public interface ContentService {
-	public PageInfo<ContentVo> queryListPage(ContentBo content, Integer page, Integer rows);
+	public PageResult<ContentVo> queryListPage(ContentBo content);
 
 	public void save(ContentBo content);
 

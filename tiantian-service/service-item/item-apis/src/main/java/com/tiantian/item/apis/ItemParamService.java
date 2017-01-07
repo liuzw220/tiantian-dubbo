@@ -1,6 +1,7 @@
 package com.tiantian.item.apis;
 
-import com.github.pagehelper.PageInfo;
+import com.tiantian.core.beans.PageResult;
+import com.tiantian.item.bo.BaseBo;
 import com.tiantian.item.bo.ItemParamBo;
 import com.tiantian.item.vo.ItemParamVo;
 
@@ -13,7 +14,7 @@ public interface ItemParamService {
 	 */
 	public abstract ItemParamVo queryByItemCatId(Long itemCatId);
 
-	public abstract PageInfo<ItemParamVo> queryAllPage(Integer page, Integer rows);
+	public abstract PageResult<ItemParamVo> queryAllPage(BaseBo bo);
 
 	public abstract void save(ItemParamVo itemParam);
 

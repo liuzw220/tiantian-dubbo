@@ -15,7 +15,7 @@ public class ItemParamBusiness extends BaseBusiness<ItemParam> {
     public ItemParam queryByItemCatId(Long itemCatId) {
         ItemParam itemParam=new ItemParam();
         itemParam.setItemCatId(itemCatId);
-        return super.querySingle(itemParam);
+        return super.findSingle(itemParam);
     }
 
 }

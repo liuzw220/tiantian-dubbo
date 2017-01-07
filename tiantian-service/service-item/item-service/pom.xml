@@ -14,7 +14,7 @@
 		<!-- 引入common工程 -->
 		<dependency>
 			<groupId>com.tiantian</groupId>
-			<artifactId>tiantian-common</artifactId>
+			<artifactId>framework-service</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<!-- 引入接口工程 -->

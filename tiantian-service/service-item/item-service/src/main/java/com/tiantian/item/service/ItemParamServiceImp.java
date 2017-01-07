@@ -2,8 +2,9 @@ package com.tiantian.item.service;
 
 import org.springframework.stereotype.Service;
 
-import com.github.pagehelper.PageInfo;
+import com.tiantian.core.beans.PageResult;
 import com.tiantian.item.apis.ItemParamService;
+import com.tiantian.item.bo.BaseBo;
 import com.tiantian.item.bo.ItemParamBo;
 import com.tiantian.item.vo.ItemParamVo;
 
@@ -17,7 +18,7 @@ public class ItemParamServiceImp implements ItemParamService {
 	}
 
 	@Override
-	public PageInfo<ItemParamVo> queryAllPage(Integer page, Integer rows) {
+	public PageResult<ItemParamVo> queryAllPage(BaseBo bo) {
 		// TODO Auto-generated method stub
 		return null;
 	}

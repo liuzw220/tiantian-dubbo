@@ -1,6 +1,7 @@
 package com.tiantian.item.apis;
 
-import com.tiantian.common.bean.EasyUIResult;
+import com.tiantian.core.beans.PageResult;
+import com.tiantian.item.bo.BaseBo;
 import com.tiantian.item.bo.ItemBo;
 import com.tiantian.item.vo.ItemVo;
 
@@ -10,10 +11,10 @@ public interface ItemService {
 	 * 五条件的查询商品(分页)
 	 * @param pageIndex 当前页码
 	 * @param pageSize 页面大小
-	 * @return EasyUIResult 结果集(包含，总记录跳数和商品的集合)
+	 * @return PageOperation 结果集(包含，总记录跳数和商品的集合)
 	 */
-	public abstract EasyUIResult queryListPage(Integer pageIndex,
-			Integer pageSize);
+	
+	public abstract PageResult<ItemVo> queryListPage(BaseBo bo);
 
 	/**
 	 * 添加商品，同时添加一条商品描述

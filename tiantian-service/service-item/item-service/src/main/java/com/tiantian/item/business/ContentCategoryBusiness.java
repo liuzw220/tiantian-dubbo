@@ -24,7 +24,7 @@ public class ContentCategoryBusiness extends BaseBusiness<ContentCategory> {
         contentCategory.setStatus(1);
         Integer count=super.save(contentCategory);
         //查找当前类目的父类目
-        ContentCategory cc= super.queryById(contentCategory.getParentId());
+        ContentCategory cc= super.findById(contentCategory.getParentId());
         //当前父目录不是暂时还不是父目录
         if(cc!=null&&!cc.getIsParent()){
             ContentCategory newContentCategory=new ContentCategory();
@@ -41,7 +41,7 @@ public class ContentCategoryBusiness extends BaseBusiness<ContentCategory> {
     @Override
     public Integer deleteById(Serializable id) {
         //找到当前目录
-        ContentCategory cc= super.queryById((long)id);
+        ContentCategory cc= super.findById((long)id);
         //删除当前目录
         Integer count =super.deleteById(id);
         //构造条件目录(用于查找同级目录)

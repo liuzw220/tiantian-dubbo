@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.tiantian.common.bean.ItemCatResult;
 import com.tiantian.item.apis.ItemCatService;
+import com.tiantian.item.beans.ItemCatResult;
 import com.tiantian.item.vo.ItemCatVo;
 
 @Controller

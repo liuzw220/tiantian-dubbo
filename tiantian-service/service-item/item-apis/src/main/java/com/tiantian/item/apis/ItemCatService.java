@@ -2,7 +2,7 @@ package com.tiantian.item.apis;
 
 import java.util.List;
 
-import com.tiantian.common.bean.ItemCatResult;
+import com.tiantian.item.beans.ItemCatResult;
 import com.tiantian.item.vo.ItemCatVo;
 
 public interface ItemCatService {

@@ -38,7 +38,9 @@ public class ContentController {
             ContentBo content=new ContentBo();
             content.setCategoryId(categoryId);
             //200
-            return ResponseEntity.ok(contentService.queryListPage(content, page, rows).getList());
+            content.setPageIndex(page);
+            content.setPageSize(rows);
+            return ResponseEntity.ok(contentService.queryListPage(content).getRows());
         } catch (Exception e) {
             // TODO 写日志
             e.printStackTrace();
