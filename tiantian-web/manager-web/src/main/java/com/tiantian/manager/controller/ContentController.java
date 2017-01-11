@@ -1,8 +1,5 @@
 package com.tiantian.manager.controller;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,9 +71,6 @@ public class ContentController {
     @RequestMapping(method=RequestMethod.PUT)
     public ResponseEntity<Void> updateContent(ContentBo content){
         try {
-            Collection<?> cons=new ArrayList<String>();
-            Collections con=null;
-            List<?> list=new ArrayList<String>();
             this.contentService.update(content);
             //201
             return ResponseEntity.status(HttpStatus.CREATED).build();

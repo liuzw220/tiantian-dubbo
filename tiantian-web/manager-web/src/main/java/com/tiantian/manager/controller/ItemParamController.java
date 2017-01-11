@@ -66,7 +66,7 @@ public class ItemParamController {
      * @return 返回http状态 如果成功返回201
      */
     @RequestMapping(method=RequestMethod.POST)
-    public ResponseEntity<Void> saveItemParam(ItemParamVo itemParam){
+    public ResponseEntity<Void> saveItemParam(ItemParamBo itemParam){
         try {
             this.itemParamService.save(itemParam);
             //201

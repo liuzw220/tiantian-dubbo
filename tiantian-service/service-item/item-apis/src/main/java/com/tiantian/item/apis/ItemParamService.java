@@ -16,7 +16,7 @@ public interface ItemParamService {
 
 	public abstract PageResult<ItemParamVo> queryAllPage(BaseBo bo);
 
-	public abstract void save(ItemParamVo itemParam);
+	public abstract void save(ItemParamBo itemParam);
 
 	public abstract void updateSelective(ItemParamBo itemParam);
 

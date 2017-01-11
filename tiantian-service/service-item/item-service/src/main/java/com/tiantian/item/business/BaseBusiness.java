@@ -143,6 +143,4 @@ public abstract class BaseBusiness<T extends BasePojo> {
 		System.out.println("消息发送:key="+key+"value="+value);
 		rabbitTemplate.convertAndSend(key, value);
 	}
-
-
 }

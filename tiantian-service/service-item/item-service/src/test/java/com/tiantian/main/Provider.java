@@ -3,6 +3,7 @@ package com.tiantian.main;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+@SuppressWarnings("resource")
 public class Provider {
 	public static void main(String[] args) throws Exception {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring/*.xml");

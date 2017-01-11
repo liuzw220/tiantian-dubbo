@@ -34,10 +34,9 @@ public class ItemBusiness extends BaseBusiness<Item>  {
 	 * @return EasyUIResult 结果集(包含，总记录跳数和商品的集合)
 	 */
 	public PageInfo<Item>  queryListPage(BaseBo bo) {
-		Item item=new Item();
 		// 设置分页参数
 		PageHelper.startPage(bo.getPageIndex(), bo.getPageSize());
-		return super.queryListPage(item);
+		return super.queryListPage(new Item());
 	}
 
 	/**

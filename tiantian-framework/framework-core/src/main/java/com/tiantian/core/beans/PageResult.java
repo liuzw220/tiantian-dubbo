@@ -3,9 +3,6 @@ package com.tiantian.core.beans;
 import java.io.Serializable;
 import java.util.List;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 public class PageResult<T>  implements  Serializable {
 	private static final long serialVersionUID = -9189972887768326731L;
 	public PageResult() {
@@ -115,36 +112,11 @@ public class PageResult<T>  implements  Serializable {
 	public void setNavigatepageNums(int[] navigatepageNums) {
 		this.navigatepageNums = navigatepageNums;
 	}
-	
-	
 
 	public List<T> getRows() {
 		return rows;
 	}
 	public void setRows(List<T> rows) {
 		this.rows = rows;
-	}
-
-	private static final ObjectMapper MAPPER = new ObjectMapper();
-	/**
-	 * Object是集合转化
-	 * 
-	 * @param jsonData json数据
-	 * @param clazz 集合中的类型
-	 * @return
-	 */
-	public static PageResult<?> formatToList(String jsonData, Class<?> clazz) {
-		try {
-			JsonNode jsonNode = MAPPER.readTree(jsonData);
-			JsonNode data = jsonNode.get("rows");
-			List<?> list = null;
-			if (data.isArray() && data.size() > 0) {
-				list = MAPPER.readValue(data.traverse(),
-						MAPPER.getTypeFactory().constructCollectionType(List.class, clazz));
-			}
-			return new PageResult(jsonNode.get("total").longValue(), list);
-		} catch (Exception e) {
-			return null;
-		}
 	}
 }
