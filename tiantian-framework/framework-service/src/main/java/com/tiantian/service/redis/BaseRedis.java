@@ -46,11 +46,11 @@ public abstract class BaseRedis {
 		return null;
 	}
 
-	 /**
-    * 通过键删除一个对象
-    * @param key 对象的键
-    * @return 删除的个数
-    */
+	/**
+	 * 通过键删除一个对象
+	 * @param key 对象的键
+	 * @return 删除的个数
+	 */
 	public Long del(final String key) {
 		return this.execute(new IRedisFunction<ShardedJedis, Long>() {
 			@Override
@@ -61,11 +61,11 @@ public abstract class BaseRedis {
 	}
 
 	/**
-    * 设置一个对象的过期时间
-    * @param key 对象的键
-    * @param seconds 过期时间
-    * @return
-    */
+	 * 设置一个对象的过期时间
+	 * @param key 对象的键
+	 * @param seconds 过期时间
+	 * @return
+	 */
 	public Long expire(final String key, final Integer seconds) {
 		return this.execute(new IRedisFunction<ShardedJedis, Long>() {
 			@Override
@@ -74,5 +74,32 @@ public abstract class BaseRedis {
 			}
 		});
 	}
+	/**
+	 * 获取自增序列
+	 * @param key 对象的键
+	 * @return
+	 */
+	public Long incr(final String key) {
+		return this.execute(new IRedisFunction<ShardedJedis, Long>() {
+			@Override
+			public Long callBack(ShardedJedis shardedJedis) {
+				return shardedJedis.incr(key);
+			}
+		});
+	}
 
+	/**
+	 *   获取自定义序列
+	 * @param key 对象的键
+	 * @param integer 自定义序列
+	 * @return
+	 */
+	public Long incr(final String key,final Integer integer) {
+		return this.execute(new IRedisFunction<ShardedJedis, Long>() {
+			@Override
+			public Long callBack(ShardedJedis shardedJedis) {
+				return shardedJedis.incrBy(key, integer);
+			}
+		});
+	}
 }
