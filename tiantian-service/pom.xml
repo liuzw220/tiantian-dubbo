@@ -11,6 +11,7 @@
 	<modules>
 		<module>service-all</module>
 		<module>service-item</module>
+		<module>service-order</module>
 	</modules>
 
 	

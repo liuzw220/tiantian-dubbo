@@ -1,4 +1,4 @@
-package com.tiantian.item.business;
+package com.tiantian.item.dao;
 
 import org.springframework.stereotype.Service;
 
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
  *
  */
 @Service
-public class PropertieBusiness {
+public class PropertieDao {
     //@Value("${IMAGE_BASE_URL}")
     public String IMAGE_BASE_URL;
     //@Value("${REPOSITORY_PATH}")

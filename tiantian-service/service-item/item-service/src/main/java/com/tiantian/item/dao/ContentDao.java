@@ -1,10 +1,10 @@
-package com.tiantian.item.business;
+package com.tiantian.item.dao;
 
 import org.springframework.stereotype.Service;
 
 import com.tiantian.item.pojo.Content;
 
 @Service
-public class ContentBusiness extends BaseBusiness<Content>{
+public class ContentDao extends BaseDao<Content>{
 
 }

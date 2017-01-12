@@ -1,4 +1,4 @@
-package com.tiantian.item.business;
+package com.tiantian.item.dao;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -17,7 +17,7 @@ import com.tiantian.item.pojo.BasePojo;
  * @author schoolBoy
  *
  */
-public abstract class BaseBusiness<T extends BasePojo> {
+public abstract class BaseDao<T extends BasePojo> {
 
 	@Autowired
 	private TianTianMapper<T> mapper;

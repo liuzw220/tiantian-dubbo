@@ -12,7 +12,7 @@ import com.tiantian.core.beans.PageResult;
 import com.tiantian.item.apis.ItemService;
 import com.tiantian.item.bo.BaseBo;
 import com.tiantian.item.bo.ItemBo;
-import com.tiantian.item.business.ItemBusiness;
+import com.tiantian.item.dao.ItemDao;
 import com.tiantian.item.pojo.Item;
 import com.tiantian.item.vo.ItemVo;
 
@@ -21,13 +21,13 @@ import com.tiantian.item.vo.ItemVo;
 public class ItemServiceImp implements ItemService {
 
 	@Autowired
-	private ItemBusiness itemBusiness;
+	private ItemDao itemDao;
 	@Autowired
 	private Mapper dozerMapper;
 	
 	@Override
 	public PageResult<ItemVo> queryListPage(BaseBo bo) {
-		PageInfo<Item> items=itemBusiness.queryListPage(bo);
+		PageInfo<Item> items=itemDao.queryListPage(bo);
 		PageResult<ItemVo> result=dozerMapper.map(items, PageResult.class);
 		result.setRows(pojoToVo(items.getList()));
 		return result;
@@ -45,19 +45,19 @@ public class ItemServiceImp implements ItemService {
 
 	@Override
 	public Integer deleteById(Long id) {
-		return itemBusiness.deleteById(id);
+		return itemDao.deleteById(id);
 	}
 
 	@Override
 	public ItemVo queryById(Long itemId) {
-		Item item=itemBusiness.findById(itemId);
+		Item item=itemDao.findById(itemId);
 		ItemVo vo=dozerMapper.map(item, ItemVo.class);
 		return vo;
 	}
 
 	@Override
 	public void deleteByIds(Long[] ids) {
-		 itemBusiness.deleteByIds(ids);
+		 itemDao.deleteByIds(ids);
 	}
 	/**
 	 * pojo转vo对象

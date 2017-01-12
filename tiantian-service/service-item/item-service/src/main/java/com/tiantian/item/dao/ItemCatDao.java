@@ -1,4 +1,4 @@
-package com.tiantian.item.business;
+package com.tiantian.item.dao;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,7 +15,7 @@ import com.tiantian.item.pojo.ItemCat;
 import com.tiantian.service.redis.RedisService;
 
 @Service
-public class ItemCatBusiness extends BaseBusiness<ItemCat> {
+public class ItemCatDao extends BaseDao<ItemCat> {
 
     public List<ItemCat> queryItemCatList(Long parentId) {
         ItemCat itemCat = new ItemCat();

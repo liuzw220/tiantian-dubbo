@@ -1,10 +1,10 @@
-package com.tiantian.item.business;
+package com.tiantian.item.dao;
 
 import org.springframework.stereotype.Service;
 
 import com.tiantian.item.pojo.ItemDesc;
 
 @Service
-public class ItemDescBusiness extends BaseBusiness<ItemDesc> {
+public class ItemDescDao extends BaseDao<ItemDesc> {
 
 }

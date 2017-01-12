@@ -11,7 +11,7 @@ import com.github.pagehelper.PageInfo;
 import com.tiantian.core.beans.PageResult;
 import com.tiantian.item.apis.ContentService;
 import com.tiantian.item.bo.ContentBo;
-import com.tiantian.item.business.ContentBusiness;
+import com.tiantian.item.dao.ContentDao;
 import com.tiantian.item.pojo.Content;
 import com.tiantian.item.vo.ContentVo;
 
@@ -19,19 +19,19 @@ import com.tiantian.item.vo.ContentVo;
 public class ContentServiceImp implements ContentService {
 
 	@Autowired
-	private ContentBusiness contentBusiness;
+	private ContentDao contentDao;
 	@Autowired
 	private Mapper dozerMapper;
 
 	@Override
 	public void deleteByIds(Long[] ids) {
-		contentBusiness.deleteById(ids);
+		contentDao.deleteById(ids);
 	}
 
 	@Override
 	public PageResult<ContentVo> queryListPage(ContentBo contentBo) {
 		Content content=dozerMapper.map(contentBo, Content.class);
-		PageInfo<Content> pageInfo= contentBusiness.queryListPage(content);
+		PageInfo<Content> pageInfo= contentDao.queryListPage(content);
 		@SuppressWarnings("unchecked")
 		PageResult<ContentVo> result=dozerMapper.map(pageInfo, PageResult.class);
 		result.setRows(pojoToVo(pageInfo.getList()));
@@ -41,14 +41,14 @@ public class ContentServiceImp implements ContentService {
 	@Override
 	public void save(ContentBo contentBo) {
 		Content content=dozerMapper.map(contentBo, Content.class);
-		contentBusiness.save(content);
+		contentDao.save(content);
 		
 	}
 
 	@Override
 	public void update(ContentBo contentBo) {
 		Content content=dozerMapper.map(contentBo, Content.class);
-		contentBusiness.update(content);
+		contentDao.update(content);
 	}
 	
 	

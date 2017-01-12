@@ -1,4 +1,4 @@
-package com.tiantian.item.business;
+package com.tiantian.item.dao;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -18,7 +18,7 @@ import com.tiantian.item.pojo.ItemDesc;
 import com.tiantian.item.pojo.ItemParamItem;
 
 @Service
-public class ItemBusiness extends BaseBusiness<Item>  {
+public class ItemDao extends BaseDao<Item>  {
 
 	//注入商品描述mapper
 	@Autowired 

@@ -1,11 +1,11 @@
-package com.tiantian.item.business;
+package com.tiantian.item.dao;
 
 import org.springframework.stereotype.Service;
 
 import com.tiantian.item.pojo.ItemParamItem;
 
 @Service
-public class ItemParamItemBusiness extends BaseBusiness<ItemParamItem> {
+public class ItemParamItemDao extends BaseDao<ItemParamItem> {
 
     /**
      * 通过商品id 查找商品对应的规格参数(数据)

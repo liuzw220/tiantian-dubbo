@@ -1,4 +1,4 @@
-package com.tiantian.item.business;
+package com.tiantian.item.dao;
 
 import java.io.Serializable;
 
@@ -9,7 +9,7 @@ import com.tiantian.item.mapper.ContentCategoryMapper;
 import com.tiantian.item.pojo.ContentCategory;
 
 @Service
-public class ContentCategoryBusiness extends BaseBusiness<ContentCategory> {
+public class ContentCategoryDao extends BaseDao<ContentCategory> {
 
     @Autowired
     private ContentCategoryMapper contentCategoryMapper;
