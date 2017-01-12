@@ -9,5 +9,6 @@
   <packaging>pom</packaging>
   <modules>
   	<module>manager-web</module>
+  	<module>order-web</module>
   </modules>
 </project>

@@ -116,32 +116,6 @@
 		</set>
 		WHERE order_id = #{orderId};
 	</update>
-
-	<delete id="deleteByID" parameterType="Long">
-		DELETE FROM
-		<include refid="tableName" />
-		WHERE order_id = #{orderId};
-		DELETE FROM tb_order_item WHERE order_id =
-		#{orderId};
-	</delete>
-
-	<delete id="deleteByIDS" parameterType="list">
-		DELETE FROM
-		<include refid="tableName" />
-		WHERE order_id IN
-		<foreach collection="ids" item="id" open="(" close=")"
-			separator=",">
-			#{id}
-		</foreach>
-		;
-		DELETE FROM tb_order_item WHERE order_id IN
-		<foreach collection="ids" item="id" open="(" close=")"
-			separator=",">
-			#{id}
-		</foreach>
-		;
-	</delete>
-
 	<update id="paymentOrderScan" parameterType="Date">
 		UPDATE tb_order SET
 		status = 6,
