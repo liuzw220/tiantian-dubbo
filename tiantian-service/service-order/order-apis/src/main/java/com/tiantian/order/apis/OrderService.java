@@ -15,7 +15,7 @@ public interface OrderService {
      * 
      * @param order
      */
-    public void createOrder(OrderBo order);
+    public String createOrder(OrderBo order);
 
     /**
      * 根据订单ID查询订单

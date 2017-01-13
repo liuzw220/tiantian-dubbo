@@ -44,14 +44,7 @@
 		<property name="defaultTargetDataSource" ref="masterDataSource" />
 	</bean>
 
-	<!-- 扫描指定包下面的Mapper，并且自动注入到bean中 -->
-	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.tiantian.store.order.mapper" />
-	</bean>
-
-
-	<bean id="dozerMapper" class="org.dozer.DozerBeanMapper">
-	</bean>
+	<bean id="dozerMapper" class="org.dozer.DozerBeanMapper" />
 
 	<import resource="../../dubbo/dubbo-server.xml" />
 </beans>

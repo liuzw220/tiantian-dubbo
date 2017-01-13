@@ -1,4 +1,4 @@
-package com.tiantian.item.bean;
+package com.tiantian.order.bean;
 
 public class ResultMsg {
 

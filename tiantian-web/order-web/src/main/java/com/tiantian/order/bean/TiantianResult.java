@@ -1,4 +1,4 @@
-package com.tiantian.item.bean;
+package com.tiantian.order.bean;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 /**
  * 淘淘商城自定义响应结构
  */
-public class TaotaoResult {
+public class TiantianResult {
 
     // 定义jackson对象
     private static final ObjectMapper MAPPER = new ObjectMapper();
@@ -22,33 +22,33 @@ public class TaotaoResult {
     // 响应中的数据
     private Object data;
 
-    public static TaotaoResult build(Integer status, String msg, Object data) {
-        return new TaotaoResult(status, msg, data);
+    public static TiantianResult build(Integer status, String msg, Object data) {
+        return new TiantianResult(status, msg, data);
     }
 
-    public static TaotaoResult ok(Object data) {
-        return new TaotaoResult(data);
+    public static TiantianResult ok(Object data) {
+        return new TiantianResult(data);
     }
 
-    public static TaotaoResult ok() {
-        return new TaotaoResult(null);
+    public static TiantianResult ok() {
+        return new TiantianResult(null);
     }
 
-    public TaotaoResult() {
+    public TiantianResult() {
 
     }
 
-    public static TaotaoResult build(Integer status, String msg) {
-        return new TaotaoResult(status, msg, null);
+    public static TiantianResult build(Integer status, String msg) {
+        return new TiantianResult(status, msg, null);
     }
 
-    public TaotaoResult(Integer status, String msg, Object data) {
+    public TiantianResult(Integer status, String msg, Object data) {
         this.status = status;
         this.msg = msg;
         this.data = data;
     }
 
-    public TaotaoResult(Object data) {
+    public TiantianResult(Object data) {
         this.status = 200;
         this.msg = "OK";
         this.data = data;
@@ -89,10 +89,10 @@ public class TaotaoResult {
      * @param clazz TaotaoResult中的object类型
      * @return
      */
-    public static TaotaoResult formatToPojo(String jsonData, Class<?> clazz) {
+    public static TiantianResult formatToPojo(String jsonData, Class<?> clazz) {
         try {
             if (clazz == null) {
-                return MAPPER.readValue(jsonData, TaotaoResult.class);
+                return MAPPER.readValue(jsonData, TiantianResult.class);
             }
             JsonNode jsonNode = MAPPER.readTree(jsonData);
             JsonNode data = jsonNode.get("data");
@@ -116,9 +116,9 @@ public class TaotaoResult {
      * @param json
      * @return
      */
-    public static TaotaoResult format(String json) {
+    public static TiantianResult format(String json) {
         try {
-            return MAPPER.readValue(json, TaotaoResult.class);
+            return MAPPER.readValue(json, TiantianResult.class);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -132,7 +132,7 @@ public class TaotaoResult {
      * @param clazz 集合中的类型
      * @return
      */
-    public static TaotaoResult formatToList(String jsonData, Class<?> clazz) {
+    public static TiantianResult formatToList(String jsonData, Class<?> clazz) {
         try {
             JsonNode jsonNode = MAPPER.readTree(jsonData);
             JsonNode data = jsonNode.get("data");

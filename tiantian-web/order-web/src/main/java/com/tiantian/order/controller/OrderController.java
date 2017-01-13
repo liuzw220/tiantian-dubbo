@@ -1,4 +1,4 @@
-package com.tiantian.item.controller;
+package com.tiantian.order.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.tiantian.core.beans.PageResult;
-import com.tiantian.item.bean.ResultMsg;
-import com.tiantian.item.bean.TaotaoResult;
-import com.tiantian.item.business.OrderServiceBusiness;
+import com.tiantian.order.bean.ResultMsg;
+import com.tiantian.order.bean.TiantianResult;
+import com.tiantian.order.business.OrderServiceBusiness;
 import com.tiantian.order.vo.OrderVo;
 
 
@@ -29,7 +29,7 @@ public class OrderController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/create" , method = RequestMethod.POST)
-	public TaotaoResult createOrder(@RequestBody String json) {
+	public TiantianResult createOrder(@RequestBody String json) {
 		return orderBusiness.createOrder(json);
 	}
 	

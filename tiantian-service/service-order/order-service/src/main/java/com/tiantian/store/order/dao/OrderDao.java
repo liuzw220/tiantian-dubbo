@@ -18,13 +18,9 @@ public class OrderDao extends BaseDao<Order>{
 	
 	@Autowired
 	private OrderMapper orderMapper;
-
-	 
 	public void createOrder(Order order) {
 		super.save(order);
 	}
-
-	 
 	public Order queryOrderById(String orderId) {
 		return super.findById(orderId);
 	}

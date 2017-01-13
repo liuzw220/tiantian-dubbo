@@ -11,15 +11,19 @@
          http://www.springframework.org/schema/context/spring-context.xsd">
 	<!-- spring 整合mybatis -->
 	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- 指定mybatis的全局的配置文件路径 -->
 		<property name="configLocation" value="classpath:mybatis/mybatis-config.xml" />
 		<property name="dataSource" ref="dataSource" />
+		<!-- 使用通配符配置Mapper.xml -->
 		<property name="mapperLocations" value="classpath:mybatis/mappers/*.xml" />
 		<property name="typeAliasesPackage" value="com.tiantian.store.order.pojo" />
 	</bean>
-	<!-- 定义接口扫描 -->
+
+
+	<!-- 扫描指定包下面的Mapper，并且自动注入到bean中 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="com.tiantian.store.order.mapper" />
 	</bean>
-	
+
 
 </beans>
