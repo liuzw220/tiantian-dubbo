@@ -2,8 +2,9 @@ package com.tiantian.order.vo;
 
 import java.util.Date;
 
-public class OrderShippingVo {
-
+public class OrderShippingVo extends BaseVo {
+	private static final long serialVersionUID = -8654468036066824565L;
+	
 	private String orderId; // 订单ID
 	private String receiverName; // 收货人全名
 	private String receiverPhone; // 固定电话

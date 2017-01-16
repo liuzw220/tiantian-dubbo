@@ -44,7 +44,11 @@ public class OrderServiceBusiness {
 
 	public PageResult<OrderVo> queryOrderByUserNameAndPage(String buyerNick,
 			Integer page, Integer count) {
-		return orderService.queryOrderByUserNameAndPage(buyerNick, page, count);
+		OrderBo bo=new OrderBo();
+		bo.setBuyerNick(buyerNick);
+		bo.setPageIndex(page);
+		bo.setPageSize(count);
+		return orderService.queryOrderByUserNameAndPage(bo);
 	}
 
 	public ResultMsg changeOrderStatus(String json) {

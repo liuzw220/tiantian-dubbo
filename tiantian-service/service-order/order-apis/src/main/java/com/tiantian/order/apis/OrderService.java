@@ -33,7 +33,7 @@ public interface OrderService {
      * @param count 查询数据条数
      * @return 分页结果集
      */
-    public PageResult<OrderVo> queryOrderByUserNameAndPage(String buyerNick, Integer page, Integer count);
+    public PageResult<OrderVo> queryOrderByUserNameAndPage(OrderBo orderBo);
 
     /**
      * 更改订单状态，由service层控制修改逻辑

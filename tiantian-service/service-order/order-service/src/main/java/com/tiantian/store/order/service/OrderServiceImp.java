@@ -45,8 +45,7 @@ public class OrderServiceImp implements OrderService  {
 	}
 
 	@Override
-	public PageResult<OrderVo> queryOrderByUserNameAndPage(String buyerNick,
-			Integer page, Integer count) {
+	public PageResult<OrderVo> queryOrderByUserNameAndPage(OrderBo orderBo) {
 		return null;
 	}
 

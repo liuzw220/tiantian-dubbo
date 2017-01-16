@@ -1,7 +1,9 @@
 package com.tiantian.order.bo;
 
 
-public class OrderItemBo {
+public class OrderItemBo extends BaseBo{
+	
+	private static final long serialVersionUID = -6588129466594865543L;
 	
 	private Long itemId;//商品id
 	private String orderId;//订单id

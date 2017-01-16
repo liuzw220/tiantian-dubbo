@@ -11,7 +11,10 @@ import org.hibernate.validator.constraints.NotEmpty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.DateDeserializers.DateDeserializer;
 
-public class OrderBo {
+public class OrderBo extends BaseBo {
+	
+	private static final long serialVersionUID = 142091935712337122L;
+	
 	private String orderId;//id,rowKye:id+时间戳
 	@NotBlank
 	private String payment;//实付金额

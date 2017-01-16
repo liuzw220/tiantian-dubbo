@@ -1,7 +1,8 @@
 package com.tiantian.order.vo;
 
 
-public class OrderItemVo {
+public class OrderItemVo extends BaseVo {
+	private static final long serialVersionUID = -100788265852190117L;
 	
 	private Long itemId;//商品id
 	private String orderId;//订单id

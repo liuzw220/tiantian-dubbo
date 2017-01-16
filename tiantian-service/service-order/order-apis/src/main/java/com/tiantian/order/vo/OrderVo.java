@@ -3,7 +3,9 @@ package com.tiantian.order.vo;
 import java.util.Date;
 import java.util.List;
 
-public class OrderVo {
+public class OrderVo extends BaseVo {
+	private static final long serialVersionUID = 7411266484138207728L;
+	
 	private String orderId;//id,rowKye:id+时间戳
 	private String payment;//实付金额
 	private Integer paymentType; //支付类型，1、在线支付，2、货到付款

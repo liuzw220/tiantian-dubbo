@@ -1,10 +1,10 @@
-package com.tiantian.item.vo;
+package com.tiantian.order.vo;
 
 import java.io.Serializable;
 import java.util.Date;
 
 public abstract class BaseVo implements  Serializable {
-	private static final long serialVersionUID = 5849984631109988413L;
+	private static final long serialVersionUID = -2151059750924228803L;
 	
 	private Date created;
     private Date updated;

@@ -7,10 +7,11 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>order-service</artifactId>
-
+	<properties>
+		<publish>F:\\publish\\${artifactId}</publish>
+	</properties>
 	<dependencies>
-	
-	<!-- 引入framework-service工程 -->
+		<!-- 引入framework-service工程 -->
 		<dependency>
 			<groupId>com.tiantian</groupId>
 			<artifactId>framework-service</artifactId>
@@ -22,7 +23,7 @@
 			<artifactId>order-apis</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-	
+
 		<!-- 单元测试 -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -73,7 +74,7 @@
 			<artifactId>spring-context-support</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
+
 		<!-- dubbo 相关 -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
@@ -113,4 +114,45 @@
 			<version>5.5.1</version>
 		</dependency>
 	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<outputDirectory>${publish}</outputDirectory>
+					<archive>
+						<manifest>
+							<addDefaultImplementationEntries>true
+							</addDefaultImplementationEntries>
+							<addDefaultSpecificationEntries>true
+							</addDefaultSpecificationEntries>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib/</classpathPrefix>
+							<mainClass>com.tiantian.store.order.main.Main</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<outputDirectory>${publish}</outputDirectory>
+					<descriptors>
+						<descriptor>src/main/assembly/assembly.xml</descriptor>
+					</descriptors>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>

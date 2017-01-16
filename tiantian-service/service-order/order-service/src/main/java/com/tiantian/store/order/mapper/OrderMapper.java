@@ -5,7 +5,7 @@ import java.util.Date;
 import org.apache.ibatis.annotations.Param;
 
 import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
-import com.github.miemiedev.mybatis.paginator.domain.PageList;
+import com.github.pagehelper.PageInfo;
 import com.tiantian.core.mapper.plugin.TianTianMapper;
 import com.tiantian.store.order.bean.Where;
 import com.tiantian.store.order.pojo.Order;
@@ -20,7 +20,7 @@ public interface OrderMapper extends  TianTianMapper<Order>{
 	 * @param where
 	 * @return
 	 */
-	public PageList<Order> queryListByWhere(PageBounds bounds, @Param("where")Where where);
+	public PageInfo<Order> queryListByWhere(PageBounds bounds, @Param("where")Where where);
 	/**
 	 * 通过where条件查询
 	 * 

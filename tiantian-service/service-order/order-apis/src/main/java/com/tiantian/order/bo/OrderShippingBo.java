@@ -4,8 +4,9 @@ import java.util.Date;
 
 import org.hibernate.validator.constraints.Length;
 
-public class OrderShippingBo {
-
+public class OrderShippingBo extends BaseBo {
+	private static final long serialVersionUID = 7257489374989843636L;
+	
 	private String orderId; // 订单ID
 	@Length(max = 20)
 	private String receiverName; // 收货人全名

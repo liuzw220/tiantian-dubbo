@@ -6,7 +6,7 @@ import org.quartz.JobExecutionException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.scheduling.quartz.QuartzJobBean;
 
-import com.tiantian.store.order.mapper.OrderMapper;
+import com.tiantian.store.order.dao.OrderDao;
 
 
 /**
@@ -18,7 +18,7 @@ public class PaymentOrderJob extends QuartzJobBean {
     protected void executeInternal(JobExecutionContext context) throws JobExecutionException {
         ApplicationContext applicationContext = (ApplicationContext) context.getJobDetail().getJobDataMap()
                 .get("applicationContext");
-        applicationContext.getBean(OrderMapper.class).paymentOrderScan(new DateTime().minusDays(2).toDate());
+        applicationContext.getBean(OrderDao.class).paymentOrderScan(new DateTime().minusDays(2).toDate());
     }
 
 }
