@@ -1,6 +1,8 @@
 package com.tiantian.store.order.service;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +11,11 @@ import org.springframework.stereotype.Service;
 import com.tiantian.core.beans.PageResult;
 import com.tiantian.order.apis.OrderService;
 import com.tiantian.order.bo.OrderBo;
+import com.tiantian.order.vo.OrderItemVo;
 import com.tiantian.order.vo.OrderVo;
 import com.tiantian.store.order.dao.OrderDao;
 import com.tiantian.store.order.pojo.Order;
+import com.tiantian.store.order.pojo.OrderItem;
 
 @Service("orderService")
 public class OrderServiceImp implements OrderService  {
@@ -41,7 +45,9 @@ public class OrderServiceImp implements OrderService  {
 	@Override
 	public OrderVo queryOrderById(String orderId) {
 		Order order=orderDao.queryOrderById(orderId);
-		return dozerMapper.map(order, OrderVo.class);
+		OrderVo result=dozerMapper.map(order, OrderVo.class);
+		result.setOrderItems(poToVo(order.getOrderItems()));
+		return result;
 	}
 
 	@Override
@@ -54,6 +60,16 @@ public class OrderServiceImp implements OrderService  {
 		Order order=new Order();
 		order.setUpdateTime(new Date());
 		this.orderDao.update(order);
+	}
+	
+	
+	public List<OrderItemVo> poToVo(List<OrderItem> orders){
+		List<OrderItemVo> list=new ArrayList<OrderItemVo>();
+		for(OrderItem oi:orders){
+			list.add(dozerMapper.map(oi, OrderItemVo.class));
+		}
+		return list;
+		
 	}
 
 }

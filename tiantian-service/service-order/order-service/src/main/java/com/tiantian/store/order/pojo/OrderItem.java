@@ -1,6 +1,9 @@
 package com.tiantian.store.order.pojo;
 
+import javax.persistence.Table;
 
+
+@Table(name="tb_order_item")
 public class OrderItem {
 	
 	private Long itemId;//商品id

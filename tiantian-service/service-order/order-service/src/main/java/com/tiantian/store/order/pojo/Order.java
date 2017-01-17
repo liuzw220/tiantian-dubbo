@@ -3,6 +3,7 @@ package com.tiantian.store.order.pojo;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Table;
 import javax.validation.constraints.Min;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -11,6 +12,8 @@ import org.hibernate.validator.constraints.NotEmpty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.DateDeserializers.DateDeserializer;
 
+
+@Table(name="tb_order")
 public class Order extends BasePojo {
 	private String orderId;//id,rowKye:id+时间戳
 	@NotBlank

@@ -2,8 +2,11 @@ package com.tiantian.store.order.pojo;
 
 import java.util.Date;
 
+import javax.persistence.Table;
+
 import org.hibernate.validator.constraints.Length;
 
+@Table(name="tb_order_shipping")
 public class OrderShipping {
 
 	private String orderId; // 订单ID

@@ -13,6 +13,8 @@ import com.tiantian.store.order.pojo.Order;
 
 
 public interface OrderMapper extends  TianTianMapper<Order>{
+	
+	
 	/**
 	 * 按照where条件分页查询
 	 * 
@@ -31,5 +33,20 @@ public interface OrderMapper extends  TianTianMapper<Order>{
 	
 	
 	public void paymentOrderScan(@Param("date") Date date);
+	/**
+	 * 通过ID查询数据
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public Order queryByID(@Param("id") String id);
+	
+	
+	/**
+	 * 新增数据
+	 * 
+	 * @param t
+	 */
+	public void save(Order t);
 	
 }
