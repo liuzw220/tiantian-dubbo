@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class UserBo extends BaseBo {
    
 	private static final long serialVersionUID = 8317938773876733565L;
-	private Long id;
+	private Integer id;
     //message: 错误提示
     private String username;
     @JsonIgnore
@@ -17,10 +17,10 @@ public class UserBo extends BaseBo {
     private Date created;
     private Date updated;
     
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     public String getUsername() {
@@ -59,7 +59,12 @@ public class UserBo extends BaseBo {
     public void setUpdated(Date updated) {
         this.updated = updated;
     }
-    
+	@Override
+	public String toString() {
+		return "UserBo [id=" + id + ", username=" + username + ", password="
+				+ password + ", phone=" + phone + ", email=" + email
+				+ ", created=" + created + ", updated=" + updated + "]";
+	}
     
 
 }

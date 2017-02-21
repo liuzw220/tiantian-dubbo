@@ -12,9 +12,9 @@
 	<!-- spring 整合mybatis -->
 	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="configLocation" value="classpath:mybatis/mybatis-config.xml" />
-		<property name="dataSource" ref="dataSource" />
+		<property name="dataSource" ref="shardingDataSource" />
 		<property name="mapperLocations" value="classpath:mybatis/mappers/*.xml" />
-		<property name="typeAliasesPackage" value="com.tiantian.sso.pojo" />
+		<property name="typeAliasesPackage" value="com.tiantian.member.pojo" />
 	</bean>
 	<!-- 定义接口扫描 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">

@@ -6,11 +6,10 @@
        http://code.alibabatech.com/schema/dubbo
        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
-	<dubbo:application name="liuzw-dubbo-server" />
+	<dubbo:application name="liuzw-dubbo-client" />
 
 	<dubbo:registry address="${dubbo.registry.address}" />
 
-	<!-- <dubbo:protocol name="dubbo" port="${dubbo.protocol.port}"  /> -->
-		
-	<dubbo:service interface="com.tiantian.member.apis.UserService" ref="userService" />
+	<dubbo:reference id="userService"
+		interface="com.tiantian.member.apis.UserService" timeout="2000" check="false" />
 </beans>

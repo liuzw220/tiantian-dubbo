@@ -29,9 +29,10 @@ public final class SingleKeyModuloTableShardingAlgorithm implements SingleKeyTab
     @Override
     public String doEqualSharding(final Collection<String> availableTargetNames, final ShardingValue<Integer> shardingValue) {
         for (String each : availableTargetNames) {
-            if (each.endsWith(shardingValue.getValue() % 2 + "")) {
+        	return each;
+            /*if (each.endsWith(shardingValue.getValue() % 2 + "")) {
                 return each;
-            }
+            }*/
         }
         throw new UnsupportedOperationException();
     }

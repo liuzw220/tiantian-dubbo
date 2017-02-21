@@ -4,13 +4,25 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.tiantian.member.mapper.UserMapper">
 
+
+
+	<sql id="baseColumnList">
+		id,
+		username,
+		password,
+		phone,
+		email,
+		created,
+		updated
+	</sql>
+
 	<select id="queryByType" resultType="User">
-		select * from tb_user where
+		select <include refid="baseColumnList"/> from tb_user where
 		${type}=#{param}
 	</select>
 	<insert id="save">
-		insert into tb_user values(
-		null,#{username},#{password},#{phone},#{email},NOW(),NOW()
+		insert into tb_user(<include refid="baseColumnList"/>) values(
+		#{id},#{username},#{password},#{phone},#{email},NOW(),NOW()
 		)
 	</insert>
 

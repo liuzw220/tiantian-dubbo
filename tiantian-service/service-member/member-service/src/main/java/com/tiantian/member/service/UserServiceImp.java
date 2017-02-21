@@ -10,7 +10,7 @@ import com.tiantian.member.dao.UserDao;
 import com.tiantian.member.pojo.User;
 import com.tiantian.member.vo.UserVo;
 
-@Service
+@Service("userService")
 public class UserServiceImp implements UserService {
 
 	@Autowired

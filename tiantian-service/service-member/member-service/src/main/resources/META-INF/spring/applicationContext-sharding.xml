@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:rdb="http://www.dangdang.com/schema/ddframe/rdb"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans.xsd 
+                        http://www.springframework.org/schema/tx 
+                        http://www.springframework.org/schema/tx/spring-tx.xsd
+                        http://www.springframework.org/schema/context 
+                        http://www.springframework.org/schema/context/spring-context.xsd
+                        http://www.dangdang.com/schema/ddframe/rdb 
+                        http://www.dangdang.com/schema/ddframe/rdb/rdb.xsd">
+
+	<bean id="ds_0" class="com.jolbox.bonecp.BoneCPDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${jdbc.driver0}" />
+		<property name="jdbcUrl" value="${jdbc.url0}" />
+		<property name="username" value="${jdbc.username0}" />
+		<property name="password" value="${jdbc.password0}" />
+		<!-- 检查数据库连接池中空闲连接的间隔时间，单位是分，默认值：240，如果要取消则设置为0 -->
+		<property name="idleConnectionTestPeriod" value="60" />
+		<!-- 连接池中未使用的链接最大存活时间，单位是分，默认值：60，如果要永远存活设置为0 -->
+		<property name="idleMaxAge" value="30" />
+		<!-- 每个分区最大的连接数 -->
+		<property name="maxConnectionsPerPartition" value="150" />
+		<!-- 每个分区最小的连接数 -->
+		<property name="minConnectionsPerPartition" value="5" />
+	</bean>
+	<bean id="ds_1" class="com.jolbox.bonecp.BoneCPDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${jdbc.driver1}" />
+		<property name="jdbcUrl" value="${jdbc.url1}" />
+		<property name="username" value="${jdbc.username1}" />
+		<property name="password" value="${jdbc.password1}" />
+		<!-- 检查数据库连接池中空闲连接的间隔时间，单位是分，默认值：240，如果要取消则设置为0 -->
+		<property name="idleConnectionTestPeriod" value="60" />
+		<!-- 连接池中未使用的链接最大存活时间，单位是分，默认值：60，如果要永远存活设置为0 -->
+		<property name="idleMaxAge" value="30" />
+		<!-- 每个分区最大的连接数 -->
+		<property name="maxConnectionsPerPartition" value="150" />
+		<!-- 每个分区最小的连接数 -->
+		<property name="minConnectionsPerPartition" value="5" />
+	</bean>
+	
+	<rdb:strategy id="databaseShardingStrategy"
+		sharding-columns="id"
+		algorithm-class="com.tiantian.core.sharding.jdbc.algorithm.SingleKeyModuloDatabaseShardingAlgorithm" />
+	<rdb:strategy id="tableShardingStrategy" sharding-columns="id"
+		algorithm-class="com.tiantian.core.sharding.jdbc.algorithm.SingleKeyModuloTableShardingAlgorithm" />
+
+	<rdb:data-source id="shardingDataSource">
+		<rdb:sharding-rule data-sources="ds_0, ds_1">
+			<rdb:table-rules>
+				<rdb:table-rule logic-table="tb_user" actual-tables="tb_user"
+					database-strategy="databaseShardingStrategy" table-strategy="tableShardingStrategy" />
+			</rdb:table-rules>
+		</rdb:sharding-rule>
+	</rdb:data-source>
+</beans>

@@ -10,5 +10,6 @@
   <modules>
   	<module>manager-web</module>
   	<module>order-web</module>
+  	<module>member-web</module>
   </modules>
 </project>

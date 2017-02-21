@@ -8,7 +8,7 @@ import org.hibernate.validator.constraints.Length;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class User {
-    private Long id;
+    private Integer id;
     //message: 错误提示
     @Length(min = 6, max = 15, message = "用户名的长度为6~15.")
     private String username;
@@ -22,10 +22,10 @@ public class User {
     private Date created;
     private Date updated;
     
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     public String getUsername() {
