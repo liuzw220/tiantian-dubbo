@@ -59,11 +59,6 @@ public class UserController {
     @RequestMapping(value="register",method=RequestMethod.POST)
     @ResponseBody
     public ResponseEntity<String> register(@Valid UserBo user, BindingResult result){
-    	user.setEmail("572361523@qq.com");
-    	user.setPassword("123456");
-    	user.setId(51);
-    	user.setUsername("lzw221");
-    	user.setPhone("1588702359");
         try {
             if(result.hasErrors()){
                 // 错误处理
