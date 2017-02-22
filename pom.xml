@@ -37,6 +37,7 @@
 		<netty.version>4.0.9.Final</netty.version>
 		<mapper.version>2.2.0</mapper.version>
 		<jedis.version>2.6.0</jedis.version>
+		<sharding-jdbc.version>1.4.2-SNAPSHOT</sharding-jdbc.version>
 	</properties>
 
 	<dependencyManagement>
@@ -237,6 +238,16 @@
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-io</artifactId>
 				<version>${commons-io.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.dangdang</groupId>
+				<artifactId>sharding-jdbc-core</artifactId>
+				<version>${sharding-jdbc.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.dangdang</groupId>
+				<artifactId>sharding-jdbc-config-spring</artifactId>
+				<version>${sharding-jdbc.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
