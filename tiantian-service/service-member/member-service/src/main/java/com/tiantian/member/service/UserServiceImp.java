@@ -15,7 +15,7 @@ public class UserServiceImp implements UserService {
 
 	@Autowired
 	private UserDao userDao;
-	@Autowired
+	@Autowired(required=false)
 	private Mapper dozerMapper;
 	@Override
 	public Boolean checkUser(String param, Integer type) {

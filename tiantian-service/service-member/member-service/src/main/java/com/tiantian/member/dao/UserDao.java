@@ -17,7 +17,7 @@ public class UserDao {
 
     @Autowired
     private UserMapper userMapper;
-    @Autowired
+    @Autowired(required=false)
     private RedisService redisService;
 
     private static final Integer USER_SESSION_TIME=60*30;

@@ -37,7 +37,7 @@
 		<netty.version>4.0.9.Final</netty.version>
 		<mapper.version>2.2.0</mapper.version>
 		<jedis.version>2.6.0</jedis.version>
-		<sharding-jdbc.version>1.4.2-SNAPSHOT</sharding-jdbc.version>
+		<sharding-jdbc.version>1.4.1</sharding-jdbc.version>
 	</properties>
 
 	<dependencyManagement>
