@@ -41,18 +41,30 @@
 		<!-- 每个分区最小的连接数 -->
 		<property name="minConnectionsPerPartition" value="5" />
 	</bean>
-	
-	<rdb:strategy id="databaseShardingStrategy"
+	<!-- 用户库的切分 -->
+	<rdb:strategy id="databaseShardingStrategy_user"
 		sharding-columns="id"
 		algorithm-class="com.tiantian.core.sharding.jdbc.algorithm.SingleKeyModuloDatabaseShardingAlgorithm" />
-	<rdb:strategy id="tableShardingStrategy" sharding-columns="id"
+	<rdb:strategy id="tableShardingStrategy_user"
+		sharding-columns="id"
 		algorithm-class="com.tiantian.core.sharding.jdbc.algorithm.SingleKeyModuloTableShardingAlgorithm" />
+		
+	<!-- 用户库相关的的订单的切分 -->
+	<rdb:strategy id="databaseShardingStrategy_order"
+		sharding-columns="user_id"
+		algorithm-class="com.tiantian.core.sharding.jdbc.algorithm.SingleKeyModuloDatabaseShardingAlgorithm" />
+	<rdb:strategy id="tableShardingStrategy_order" sharding-columns="user_id"
+		algorithm-class="com.tiantian.core.sharding.jdbc.algorithm.SingleKeyModuloTableShardingAlgorithm" />
+
+
 
 	<rdb:data-source id="shardingDataSource">
 		<rdb:sharding-rule data-sources="ds_0, ds_1">
 			<rdb:table-rules>
 				<rdb:table-rule logic-table="tb_user" actual-tables="tb_user"
-					database-strategy="databaseShardingStrategy" table-strategy="tableShardingStrategy" />
+					database-strategy="databaseShardingStrategy_user" table-strategy="tableShardingStrategy_user" />
+				<rdb:table-rule logic-table="tb_order" actual-tables="tb_order"
+					database-strategy="databaseShardingStrategy_order" table-strategy="tableShardingStrategy_order" />
 			</rdb:table-rules>
 		</rdb:sharding-rule>
 	</rdb:data-source>

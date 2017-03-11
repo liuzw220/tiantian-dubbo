@@ -29,5 +29,5 @@
 	<context:component-scan base-package="com.tiantian.member" />
 	<bean class="com.tiantian.service.redis.RedisService" />
 	<bean id="dozerMapper" class="org.dozer.DozerBeanMapper" />
-	<import resource="../../dubbo/dubbo-server.xml" />
+	<!-- <import resource="../../dubbo/dubbo-server.xml" /> -->
 </beans>

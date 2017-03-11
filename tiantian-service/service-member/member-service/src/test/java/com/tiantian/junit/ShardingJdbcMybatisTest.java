@@ -8,6 +8,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.tiantian.member.apis.UserService;
 import com.tiantian.member.bo.UserBo;
+import com.tiantian.member.vo.UserVo;
 
 
 
@@ -33,7 +34,8 @@ public class ShardingJdbcMybatisTest {
 
 	@Test
 	public void testFindAll(){
-		//userService.findByUserName("zhangsan2");
+		//UserVo u=userService.findByUserName("lzw220");
+		//System.out.println("============================="+u);
 	}
 
 	@Test

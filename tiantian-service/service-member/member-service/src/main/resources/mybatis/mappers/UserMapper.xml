@@ -17,7 +17,7 @@
 	</sql>
 
 	<select id="queryByType" resultType="User">
-		select <include refid="baseColumnList"/> from tb_user where
+		select * from tb_user u left join tb_order o on u.id=o.user_id where
 		${type}=#{param}
 	</select>
 	<insert id="save">
