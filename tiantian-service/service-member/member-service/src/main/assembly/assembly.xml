@@ -12,11 +12,11 @@
 		</dependencySet>
 	</dependencySets>
 	<fileSets>
-		<fileSet>
+		<!-- <fileSet>
 			<directory>src/main/resources</directory>
 			<outputDirectory>/config</outputDirectory>
 			<filtered>true</filtered>
-		</fileSet>
+		</fileSet> -->
 		<fileSet>
 			<directory>src/main/scripts</directory>
 			<outputDirectory>/bin</outputDirectory>

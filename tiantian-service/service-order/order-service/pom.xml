@@ -7,9 +7,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>order-service</artifactId>
-	<properties>
-		<publish>F:\\publish\\${artifactId}</publish>
-	</properties>
+	
 	<dependencies>
 		<!-- 引入framework-service工程 -->
 		<dependency>
