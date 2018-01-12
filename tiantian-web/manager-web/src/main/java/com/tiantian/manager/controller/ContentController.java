@@ -92,7 +92,9 @@ public class ContentController {
         try {
             if(ids==null) 
                 //406(参数不合法)
+            {
                 return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
+            }
             this.contentService.deleteByIds(ids);
             //201
             return ResponseEntity.status(HttpStatus.CREATED).build(); 

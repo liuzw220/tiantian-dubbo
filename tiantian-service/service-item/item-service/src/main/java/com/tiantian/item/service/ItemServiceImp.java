@@ -65,7 +65,9 @@ public class ItemServiceImp implements ItemService {
 	 * @return
 	 */
 	private List<ItemVo>  pojoToVo(List<Item>  items){
-		if(items==null) return null;
+		if(items==null) {
+            return null;
+        }
 		List<ItemVo> list=new ArrayList<ItemVo>();
 		for(Item item:items){
 			ItemVo vo=dozerMapper.map(item, ItemVo.class);

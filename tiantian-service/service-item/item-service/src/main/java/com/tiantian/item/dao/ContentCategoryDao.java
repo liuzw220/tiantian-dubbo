@@ -18,6 +18,7 @@ public class ContentCategoryDao extends BaseDao<ContentCategory> {
     /**
      * 添加内容分类
      */
+    @Override
     public Integer save(ContentCategory contentCategory) {
         contentCategory.setIsParent(false);//默认不是父节点
         contentCategory.setSortOrder(1);//默认第一位

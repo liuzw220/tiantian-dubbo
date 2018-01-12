@@ -41,9 +41,11 @@ public abstract class BaseDao<T extends BasePojo> {
 	 */
 	public T findSingle(T t){
 		List<T> list = mapper.select(t);
-		if(!list.isEmpty()&&list.size()>0)
+		if(!list.isEmpty()&&list.size()>0) {
 			return list.get(0);
-		else return null;
+		} else {
+			return null;
+		}
 	}
 	/**
 	 * 条件查询,通过对象构造条件 <br/>不分页

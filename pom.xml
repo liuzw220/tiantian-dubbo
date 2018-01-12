@@ -11,6 +11,20 @@
 		<module>tiantian-framework</module>
 	</modules>
 
+	
+	 <repositories>
+        <repository>
+            <id>dev-nexus</id>
+            <name>nexus</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
 	<!-- 集中定义依赖版本号 -->
 	<properties>
@@ -33,7 +47,7 @@
 		<commons-lang3.version>3.3.2</commons-lang3.version>
 		<commons-io.version>1.3.2</commons-io.version>
 		<zookeeper.version>3.4.6</zookeeper.version>
-		<dubbo.version>2.8.4</dubbo.version>
+		<dubbo.version>2.5.4</dubbo.version>
 		<zkclient.version>0.3</zkclient.version>
 		<netty.version>4.0.9.Final</netty.version>
 		<mapper.version>2.2.0</mapper.version>

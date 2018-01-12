@@ -21,12 +21,14 @@ public class SpringEncodingFilter extends CharacterEncodingFilter {
 
     private String encoding;
     //重写编码格式
+    @Override
     public void setEncoding(String encoding) {
         super.setEncoding(encoding);
         System.out.println("初始化、 、 、"+this.getClass().getName()+"encoding="+encoding);
         this.encoding=encoding;
     }
     //是否启用编码(如果设置为false，则不进行任何的编码设置)
+    @Override
     public void setForceEncoding(boolean forceEncoding) {
         super.setForceEncoding(forceEncoding);
     }

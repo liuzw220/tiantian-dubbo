@@ -75,8 +75,8 @@ public class PicUploadController {
 		}
 
 		// 生成图片的绝对引用地址
-		String picUrl = StringUtils.replace(StringUtils.substringAfter(filePath, propertieService.REPOSITORY_PATH), "\\", "/");
-		fileUploadResult.setUrl(propertieService.IMAGE_BASE_URL + picUrl);
+		String picUrl = StringUtils.replace(StringUtils.substringAfter(filePath, PropertieService.REPOSITORY_PATH), "\\", "/");
+		fileUploadResult.setUrl(PropertieService.IMAGE_BASE_URL + picUrl);
 
 		File newFile = new File(filePath);
 
@@ -108,7 +108,7 @@ public class PicUploadController {
 	}
 
 	private String getFilePath(String sourceFileName) {
-		String baseFolder = propertieService.REPOSITORY_PATH + File.separator + "images";
+		String baseFolder = PropertieService.REPOSITORY_PATH + File.separator + "images";
 		Date nowDate = new Date();
 		// yyyy/MM/dd
 		String fileFolder = baseFolder + File.separator + new DateTime(nowDate).toString("yyyy") + File.separator + new DateTime(nowDate).toString("MM") + File.separator

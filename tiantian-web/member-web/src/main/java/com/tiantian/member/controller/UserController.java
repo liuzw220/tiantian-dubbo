@@ -64,8 +64,9 @@ public class UserController {
                 // 错误处理
                 List<String> msgs=new ArrayList<String>();
                 List<ObjectError> allErrors = result.getAllErrors();
-                for (ObjectError error :allErrors) 
+                for (ObjectError error :allErrors) {
                     msgs.add(error.toString());
+                }
                 //400(参数错误)
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(StringUtils.join(msgs, " | "));
             }

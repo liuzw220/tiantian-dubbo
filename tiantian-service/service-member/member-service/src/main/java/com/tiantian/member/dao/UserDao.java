@@ -35,11 +35,15 @@ public class UserDao {
      * @return 布尔类型
      */
     public Boolean checkUser(String param, Integer type) {
-        if(!TYPE.containsKey(type))  throw new RuntimeException("参数类型错误,只能是1，,2,3");
+        if(!TYPE.containsKey(type)) {
+            throw new RuntimeException("参数类型错误,只能是1，,2,3");
+        }
         String checkType= TYPE.get(type);
         boolean flag=false;
         User user= userMapper.queryByType(checkType,param);
-        if(user==null) flag= true;
+        if(user==null) {
+            flag = true;
+        }
         return flag;
 
     }
@@ -49,7 +53,9 @@ public class UserDao {
      */
     public Boolean register(User user) {
         User queryByType = userMapper.queryByType("username",user.getUsername());
-        if(queryByType!=null) return false;
+        if(queryByType!=null) {
+            return false;
+        }
         return userMapper.save(user);
     }
     /**
