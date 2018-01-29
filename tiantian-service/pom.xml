@@ -61,7 +61,7 @@
 				<filtering>true</filtering>
 				<includes>
 					<include>dubbo/*.xml</include>
-					<include>META-INF/*</include>
+					<include>META-INF/spring/*.xml</include>
 					<include>mybatis/*</include>
 					<include>props/*.*</include>
 					<include>*.*</include>
