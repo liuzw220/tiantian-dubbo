@@ -4,14 +4,14 @@
 	<parent>
 		<groupId>com.tiantian</groupId>
 		<artifactId>service-order</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0.1</version>
 	</parent>
 	<artifactId>order-apis</artifactId>
 	<dependencies>
 		<dependency>
 			<groupId>com.tiantian</groupId>
 			<artifactId>framework-core</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.1</version>
 		</dependency>
 		<!-- 数据校验 -->
 		<dependency>

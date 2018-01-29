@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.tiantian</groupId>
 		<artifactId>service-item</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0.1</version>
 	</parent>
 	<artifactId>item-service</artifactId>
 	<dependencies>
@@ -12,13 +12,13 @@
 		<dependency>
 			<groupId>com.tiantian</groupId>
 			<artifactId>framework-service</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.1</version>
 		</dependency>
 		<!-- 引入接口工程 -->
 		<dependency>
 			<groupId>com.tiantian</groupId>
 			<artifactId>item-apis</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.1</version>
 		</dependency>
 		<!-- spring相关 -->
 		<dependency>

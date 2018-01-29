@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.tiantian</groupId>
 		<artifactId>tiantian-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0.1</version>
 	</parent>
 	<artifactId>tiantian-service</artifactId>
 	<packaging>pom</packaging>
@@ -50,7 +50,7 @@
 		</profile>
 	</profiles>
 	<properties>
-		<publish>F:\\publish${package.environment}\\${artifactId}</publish>
+		<publish>D:\\publish\\${package.environment}\\${artifactId}</publish>
 	</properties>
 	<build>
 		<!-- 服务提供者的目录打包 -->

@@ -4,14 +4,14 @@
 	<parent>
 		<groupId>com.tiantian</groupId>
 		<artifactId>service-item</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0.1</version>
 	</parent>
 	<artifactId>item-apis</artifactId>
 	<dependencies>
 		<dependency>
 			<groupId>com.tiantian</groupId>
 			<artifactId>framework-core</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.1</version>
 		</dependency>
 	</dependencies>
 </project>
