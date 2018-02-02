@@ -15,40 +15,7 @@
 		<module>service-member</module>
 	</modules>
 	<!-- 打包以后存放磁盘的位置 -->
-	
-	<profiles>
-		<profile>
-			<!-- 开发环境 -->
-			<id>dev</id>
-			<properties>
-				<package.environment>dev</package.environment>
-			</properties>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-		</profile>
-		<profile>
-			<!-- 测试环境 -->
-			<id>test</id>
-			<properties>
-				<package.environment>test</package.environment>
-			</properties>
-		</profile>
-		<profile>
-			<!-- uat环境 -->
-			<id>uat</id>
-			<properties>
-				<package.environment>uat</package.environment>
-			</properties>
-		</profile>
-		<profile>
-			<!-- 正式环境 -->
-			<id>prod</id>
-			<properties>
-				<package.environment>prod</package.environment>
-			</properties>
-		</profile>
-	</profiles>
+
 	<properties>
 		<publish>D:\\publish\\${package.environment}\\${artifactId}</publish>
 	</properties>
